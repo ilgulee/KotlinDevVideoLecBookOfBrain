@@ -2,9 +2,9 @@ package ilgulee.com.kotlindevvideolecbookofbrain.activities
 
 import android.content.Intent
 import android.os.Bundle
+import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
 import ilgulee.com.kotlindevvideolecbookofbrain.R
-import ilgulee.com.kotlindevvideolecbookofbrain.showText
 import kotlinx.android.synthetic.main.activity_main.*
 
 class MainActivity : AppCompatActivity() {
@@ -14,11 +14,12 @@ class MainActivity : AppCompatActivity() {
         setContentView(R.layout.activity_main)
 
         button_show_toast.setOnClickListener {
-            showText("Hello World")
+            Toast.makeText(this, "Hello", Toast.LENGTH_LONG).show()
         }
 
         button_send_intent.setOnClickListener {
             val message: String = editText_message.text.toString()
+            //Toast.makeText(this, "Your message " + message, Toast.LENGTH_LONG).show()
             val intent = Intent(this, SecondActivity::class.java)
             intent.putExtra("user_message", message)
             startActivity(intent)

@@ -5,10 +5,10 @@ import android.content.Intent
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import android.widget.Toast
 import androidx.recyclerview.widget.RecyclerView
 import ilgulee.com.kotlindevvideolecbookofbrain.R
 import ilgulee.com.kotlindevvideolecbookofbrain.models.Hobby
-import ilgulee.com.kotlindevvideolecbookofbrain.showText
 import kotlinx.android.synthetic.main.list_item.view.*
 
 class HobbiesAdapter(private val context: Context, private val hobbiesList: List<Hobby>) :
@@ -20,7 +20,7 @@ class HobbiesAdapter(private val context: Context, private val hobbiesList: List
 
         init {
             itemView.setOnClickListener {
-                context.showText(currentHobby!!.title + " clicked")
+                Toast.makeText(context, currentHobby!!.title + " clicked", Toast.LENGTH_LONG).show()
             }
             itemView.imageView_share.setOnClickListener {
                 val message: String = "My hobby is : " + currentHobby!!.title
