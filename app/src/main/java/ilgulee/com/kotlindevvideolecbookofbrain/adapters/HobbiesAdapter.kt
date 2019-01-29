@@ -1,4 +1,4 @@
-package ilgulee.com.kotlindevvideolecbookofbrain
+package ilgulee.com.kotlindevvideolecbookofbrain.adapters
 
 import android.content.Context
 import android.content.Intent
@@ -7,6 +7,8 @@ import android.view.View
 import android.view.ViewGroup
 import android.widget.Toast
 import androidx.recyclerview.widget.RecyclerView
+import ilgulee.com.kotlindevvideolecbookofbrain.R
+import ilgulee.com.kotlindevvideolecbookofbrain.models.Hobby
 import kotlinx.android.synthetic.main.list_item.view.*
 
 class HobbiesAdapter(private val context: Context, private val hobbiesList: List<Hobby>) :
@@ -41,7 +43,7 @@ class HobbiesAdapter(private val context: Context, private val hobbiesList: List
     override fun onCreateViewHolder(
         parent: ViewGroup,
         viewType: Int
-    ): HobbiesAdapter.MyViewHolder {
+    ): MyViewHolder {
         // create a new view
         val view = LayoutInflater.from(parent.context)
             .inflate(R.layout.list_item, parent, false)
@@ -53,7 +55,7 @@ class HobbiesAdapter(private val context: Context, private val hobbiesList: List
     override fun onBindViewHolder(holder: MyViewHolder, position: Int) {
         // - get element from your dataset at this position
         // - replace the contents of the view with that element
-        val hobby = hobbiesList.get(position);
+        val hobby = hobbiesList.get(position)
         holder.setData(hobby, position)
     }
 
